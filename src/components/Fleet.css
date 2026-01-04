@@ -1,0 +1,483 @@
+.fleet {
+    background: linear-gradient(180deg, var(--primary-bg) 0%, #181818 100%);
+    position: relative;
+    overflow: hidden;
+    padding: 120px 0;
+}
+
+.fleet::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+/* Fog/mist effect */
+.fleet-fog {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background: linear-gradient(0deg, rgba(31, 31, 31, 0.8) 0%, transparent 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.fleet-container {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* Content Side */
+.fleet-content {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.fleet-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    background: rgba(212, 166, 78, 0.1);
+    border: 1px solid var(--gold);
+    border-radius: 50px;
+    color: var(--gold);
+    font-size: 0.85rem;
+    font-weight: 600;
+    width: fit-content;
+}
+
+.fleet-title {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.fleet-description {
+    color: var(--gray);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 500px;
+}
+
+.fleet-features {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 10px;
+}
+
+.fleet-feature {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    border: 1px solid var(--tertiary-bg);
+    transition: all var(--transition-smooth);
+}
+
+.fleet-feature:hover {
+    background: rgba(212, 166, 78, 0.08);
+    border-color: var(--gold);
+    transform: translateX(8px);
+}
+
+.fleet-feature-icon {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-shadow) 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-bg);
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.fleet-feature-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.fleet-feature-title {
+    font-weight: 600;
+    color: var(--white);
+    font-size: 1rem;
+}
+
+.fleet-feature-subtitle {
+    color: var(--gray);
+    font-size: 0.85rem;
+}
+
+/* Truck Visual Side */
+.fleet-visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+}
+
+.truck-container {
+    position: relative;
+    width: 100%;
+    max-width: 550px;
+}
+
+/* Truck glow effect */
+.truck-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(212, 166, 78, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: pulseGlow 3s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes pulseGlow {
+
+    0%,
+    100% {
+        opacity: 0.5;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+}
+
+/* Ground shadow */
+.truck-shadow {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 30px;
+    background: radial-gradient(ellipse, rgba(0, 0, 0, 0.4) 0%, transparent 70%);
+    animation: shadowPulse 2s ease-in-out infinite;
+}
+
+@keyframes shadowPulse {
+
+    0%,
+    100% {
+        opacity: 0.6;
+        transform: translateX(-50%) scaleX(1);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform: translateX(-50%) scaleX(1.05);
+    }
+}
+
+/* SVG Truck */
+.truck-svg {
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.5));
+}
+
+.truck-svg .truck-body {
+    fill: #2a2a2a;
+    stroke: var(--gold);
+    stroke-width: 1.5;
+    transition: all 0.5s ease;
+}
+
+.truck-svg .truck-cabin {
+    fill: #333;
+    stroke: var(--gold);
+    stroke-width: 1;
+}
+
+.truck-svg .truck-window {
+    fill: rgba(212, 166, 78, 0.2);
+    stroke: var(--gold);
+    stroke-width: 0.5;
+}
+
+.truck-svg .truck-wheel {
+    fill: #1a1a1a;
+    stroke: #444;
+    stroke-width: 2;
+}
+
+.truck-svg .truck-wheel-rim {
+    fill: var(--gold);
+}
+
+.truck-svg .truck-detail {
+    fill: none;
+    stroke: var(--gold);
+    stroke-width: 1;
+    opacity: 0.6;
+}
+
+.truck-svg .crane-arm {
+    fill: #333;
+    stroke: var(--gold);
+    stroke-width: 1.5;
+}
+
+.truck-svg .crane-hook {
+    fill: var(--gold);
+}
+
+/* Wheel animation */
+.truck-wheel-group {
+    animation: wheelSpin 4s linear infinite;
+    transform-origin: center;
+}
+
+@keyframes wheelSpin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Hotspots */
+.hotspot {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.hotspot-dot {
+    width: 100%;
+    height: 100%;
+    background: var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-bg);
+    font-size: 0.9rem;
+    font-weight: 700;
+    box-shadow: 0 0 0 0 rgba(212, 166, 78, 0.5);
+    animation: hotspotPulse 2s ease-in-out infinite;
+    transition: all var(--transition-smooth);
+}
+
+.hotspot:hover .hotspot-dot {
+    transform: scale(1.2);
+    box-shadow: var(--glow-gold);
+}
+
+@keyframes hotspotPulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 rgba(212, 166, 78, 0.5);
+    }
+
+    50% {
+        box-shadow: 0 0 0 12px rgba(212, 166, 78, 0);
+    }
+}
+
+/* Hotspot Positions */
+.hotspot-1 {
+    top: 20%;
+    left: 70%;
+}
+
+.hotspot-2 {
+    top: 55%;
+    left: 80%;
+}
+
+.hotspot-3 {
+    top: 70%;
+    left: 50%;
+}
+
+.hotspot-4 {
+    top: 40%;
+    left: 25%;
+}
+
+/* Info Card */
+.hotspot-card {
+    position: absolute;
+    bottom: calc(100% + 15px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 220px;
+    padding: 16px;
+    background: rgba(31, 31, 31, 0.95);
+    backdrop-filter: blur(10px);
+    border: 2px solid var(--gold);
+    border-radius: 14px;
+    box-shadow: 0 10px 40px rgba(212, 166, 78, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%) translateY(10px);
+    transition: all var(--transition-smooth);
+    pointer-events: none;
+    z-index: 20;
+}
+
+.hotspot:hover .hotspot-card {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.hotspot-card::before {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 14px;
+    height: 14px;
+    background: rgba(31, 31, 31, 0.95);
+    border-right: 2px solid var(--gold);
+    border-bottom: 2px solid var(--gold);
+}
+
+.hotspot-card-icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-shadow) 100%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-bg);
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.hotspot-card-title {
+    font-weight: 700;
+    color: var(--white);
+    font-size: 1rem;
+    margin-bottom: 6px;
+}
+
+.hotspot-card-text {
+    color: var(--gray);
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+/* Mobile Touch State */
+.hotspot.active .hotspot-card {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* CTA Button */
+.fleet-cta {
+    margin-top: 30px;
+}
+
+.fleet-cta .btn-primary {
+    position: relative;
+    overflow: hidden;
+}
+
+.fleet-cta .btn-primary::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.5s, height 0.5s;
+}
+
+.fleet-cta .btn-primary:hover::after {
+    width: 300px;
+    height: 300px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .fleet-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .fleet-content {
+        text-align: center;
+        align-items: center;
+    }
+
+    .fleet-description {
+        max-width: 100%;
+    }
+
+    .fleet-visual {
+        order: -1;
+    }
+
+    .fleet-feature:hover {
+        transform: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .fleet {
+        padding: 80px 0;
+    }
+
+    .fleet-visual {
+        min-height: 280px;
+    }
+
+    .truck-container {
+        max-width: 100%;
+    }
+
+    .hotspot {
+        width: 28px;
+        height: 28px;
+    }
+
+    .hotspot-card {
+        width: 180px;
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+
+    .fleet-feature {
+        padding: 14px 16px;
+    }
+}

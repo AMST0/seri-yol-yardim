@@ -1,0 +1,229 @@
+.contact {
+    background: var(--primary-bg);
+    position: relative;
+}
+
+.contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--tertiary-bg), transparent);
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.contact-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.contact-header p {
+    color: var(--gray);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.contact-items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 25px;
+    background: var(--secondary-bg);
+    border-radius: 16px;
+    border: 1px solid var(--tertiary-bg);
+    transition: all var(--transition-smooth);
+}
+
+.contact-item:hover {
+    border-color: var(--gold);
+    transform: translateX(5px);
+}
+
+.contact-item-icon {
+    width: 55px;
+    height: 55px;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-shadow) 100%);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    color: var(--primary-bg);
+    flex-shrink: 0;
+}
+
+.contact-item-content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.contact-item-label {
+    font-size: 0.85rem;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contact-item-value {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--white);
+}
+
+.contact-item-value a {
+    color: var(--white);
+    transition: color var(--transition-fast);
+}
+
+.contact-item-value a:hover {
+    color: var(--gold);
+}
+
+.contact-phones {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.phone-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.phone-link .phone-type {
+    font-size: 0.75rem;
+    color: var(--gold);
+    background: rgba(212, 166, 78, 0.1);
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+/* Map Container */
+.contact-map {
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid var(--tertiary-bg);
+    box-shadow: var(--shadow-lg);
+}
+
+.map-wrapper {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    background: var(--secondary-bg);
+}
+
+.map-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    filter: grayscale(80%) contrast(1.1);
+    transition: filter var(--transition-smooth);
+}
+
+.map-wrapper:hover iframe {
+    filter: grayscale(20%) contrast(1);
+}
+
+.map-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background: rgba(31, 31, 31, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 20px 25px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    border: 1px solid var(--tertiary-bg);
+}
+
+.map-overlay-text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.map-overlay-title {
+    font-weight: 600;
+    color: var(--white);
+}
+
+.map-overlay-address {
+    font-size: 0.9rem;
+    color: var(--gray);
+}
+
+.map-overlay-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: var(--gold);
+    color: var(--primary-bg);
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: 50px;
+    transition: all var(--transition-smooth);
+    white-space: nowrap;
+}
+
+.map-overlay-btn:hover {
+    transform: scale(1.05);
+    box-shadow: var(--glow-gold);
+}
+
+@media (max-width: 900px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    .map-wrapper {
+        height: 350px;
+    }
+
+    .map-overlay {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .map-overlay {
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+        padding: 15px;
+    }
+}

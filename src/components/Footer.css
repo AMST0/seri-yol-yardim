@@ -1,0 +1,251 @@
+.footer {
+    background: var(--secondary-bg);
+    padding: 60px 0 0;
+    position: relative;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 20%;
+    right: 20%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 60px;
+    padding-bottom: 40px;
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-logo-img {
+    height: 80px;
+    width: auto;
+    transition: transform var(--transition-smooth);
+}
+
+.footer-logo:hover .footer-logo-img {
+    transform: scale(1.02);
+}
+
+.footer-logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-logo-title {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 1.2rem;
+    color: var(--white);
+    letter-spacing: 1px;
+}
+
+.footer-slogan {
+    color: var(--gray);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    max-width: 300px;
+}
+
+.footer-social {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.footer-social-link {
+    width: 45px;
+    height: 45px;
+    background: var(--tertiary-bg);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: var(--gray);
+    transition: all var(--transition-smooth);
+}
+
+.footer-social-link:hover {
+    background: var(--gold);
+    color: var(--primary-bg);
+    transform: translateY(-3px);
+}
+
+.footer-social-link.whatsapp:hover {
+    background: #25D366;
+    color: white;
+}
+
+.footer-column h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--white);
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    list-style: none;
+}
+
+.footer-links a {
+    color: var(--gray);
+    font-size: 0.95rem;
+    transition: all var(--transition-fast);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-links a:hover {
+    color: var(--gold);
+    transform: translateX(5px);
+}
+
+.footer-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.footer-contact-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(212, 166, 78, 0.1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    flex-shrink: 0;
+}
+
+.footer-contact-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-contact-label {
+    font-size: 0.75rem;
+    color: var(--dark-gray);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.footer-contact-value {
+    color: var(--white);
+    font-weight: 500;
+}
+
+.footer-contact-value a {
+    color: var(--white);
+    transition: color var(--transition-fast);
+}
+
+.footer-contact-value a:hover {
+    color: var(--gold);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    border-top: 1px solid var(--tertiary-bg);
+    padding: 25px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-copyright {
+    color: var(--dark-gray);
+    font-size: 0.9rem;
+}
+
+.footer-made-by {
+    color: var(--dark-gray);
+    font-size: 0.85rem;
+}
+
+.footer-made-by a {
+    color: var(--gold);
+    font-weight: 600;
+    transition: opacity var(--transition-fast);
+}
+
+.footer-made-by a:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 900px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-brand {
+        grid-column: span 2;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-slogan {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .footer-brand {
+        grid-column: span 1;
+        align-items: center;
+    }
+
+    .footer-logo {
+        justify-content: center;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+
+    .footer-column {
+        align-items: center;
+    }
+
+    .footer-links a:hover {
+        transform: none;
+    }
+
+    .footer-contact-item {
+        justify-content: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}

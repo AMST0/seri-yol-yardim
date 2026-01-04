@@ -1,0 +1,56 @@
+.page-transition-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(15, 15, 15, 0.92);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    animation: fadeInOut 0.7s ease-in-out forwards;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    85% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.transition-truck {
+    height: 120px;
+    width: auto;
+    filter: drop-shadow(0 0 30px rgba(212, 166, 78, 0.6));
+    transform: scaleX(-1);
+}
+
+.transition-truck-video {
+    height: 300px;
+    width: auto;
+    object-fit: contain;
+    transform: scaleX(-1);
+}
+
+@media (max-width: 768px) {
+    .transition-truck {
+        height: 80px;
+    }
+
+    .transition-truck-video {
+        height: 120px;
+    }
+}
