@@ -9,23 +9,23 @@
   --white: #FFFFFF;
   --gray: #B5B5B5;
   --dark-gray: #666666;
-  
+
   /* Typography */
   --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-heading: 'Outfit', 'Inter', sans-serif;
-  
+
   /* Transitions */
   --transition-fast: 0.2s ease;
   --transition-smooth: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   --transition-bounce: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  
+
   /* Shadows */
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
   --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
   --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.5);
   --shadow-gold: 0 0 30px rgba(212, 166, 78, 0.3);
   --glow-gold: 0 0 20px rgba(212, 166, 78, 0.5), 0 0 40px rgba(212, 166, 78, 0.2);
-  
+
   /* Spacing */
   --container-max: 1200px;
   --section-padding: 100px;
@@ -52,7 +52,12 @@ body {
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
   font-weight: 700;
   line-height: 1.2;
@@ -98,6 +103,7 @@ img {
 .btn-primary {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   padding: 16px 32px;
   background: linear-gradient(135deg, var(--gold) 0%, var(--gold-shadow) 100%);
@@ -138,6 +144,7 @@ img {
 .btn-secondary {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   padding: 14px 28px;
   background: transparent;
@@ -234,7 +241,7 @@ img {
   .section {
     padding: var(--section-padding-mobile) 0;
   }
-  
+
   .btn-primary,
   .btn-secondary {
     padding: 14px 24px;
