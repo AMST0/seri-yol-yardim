@@ -88,6 +88,16 @@ const Footer = () => {
                     </div>
 
                     <div className="footer-column">
+                        <h4>Hizmet Bölgelerimiz</h4>
+                        <p className="footer-service-areas">
+                            <strong>Merkez:</strong> Ataşehir, İçerenköy
+                        </p>
+                        <p className="footer-service-areas secondary">
+                            Kadıköy, Maltepe, Ümraniye, Üsküdar, Kartal, Pendik, Tuzla, Sancaktepe, Çekmeköy, Sultanbeyli, Beykoz, Şile ve tüm Anadolu Yakası
+                        </p>
+                    </div>
+
+                    <div className="footer-column">
                         <h4>İletişim</h4>
                         <div className="footer-contact-item">
                             <div className="footer-contact-icon">
@@ -124,7 +134,7 @@ const Footer = () => {
                             <div className="footer-contact-text">
                                 <span className="footer-contact-label">Adres</span>
                                 <span className="footer-contact-value">
-                                    Ataşehir / İstanbul
+                                    İçerenköy Mah. Ataşehir / İstanbul
                                 </span>
                             </div>
                         </div>

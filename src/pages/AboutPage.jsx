@@ -78,9 +78,13 @@ const AboutPage = () => {
                         >
                             <h2>SERİ YOL YARDIM</h2>
                             <p>
-                                2009 yılından bu yana Ataşehir ve İçerenköy bölgesinde profesyonel oto kurtarma ve
+                                2009 yılından bu yana <strong>Ataşehir ve İçerenköy</strong> bölgesinde profesyonel oto kurtarma ve
                                 yol yardım hizmeti sunuyoruz. Modern araç filomuz ve deneyimli ekibimizle
                                 7/24 yanınızdayız.
+                            </p>
+                            <p>
+                                Merkez lokasyonumuz Ataşehir olmak üzere; Kadıköy, Maltepe, Ümraniye, Üsküdar,
+                                Kartal, Pendik ve tüm Anadolu Yakası'na hızlı müdahale sağlıyoruz.
                             </p>
                             <p>
                                 Müşteri memnuniyetini ön planda tutarak, her çağrıya en kısa sürede ulaşıyor
