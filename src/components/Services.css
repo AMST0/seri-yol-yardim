@@ -92,6 +92,26 @@
     line-height: 1.6;
 }
 
+.services-cta {
+    text-align: center;
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid var(--tertiary-bg);
+}
+
+.services-cta p {
+    font-size: 1.1rem;
+    color: var(--gray);
+    margin-bottom: 25px;
+}
+
+.services-cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
 @media (max-width: 1024px) {
     .services-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -106,5 +126,15 @@
 
     .service-card {
         padding: 30px 25px;
+    }
+
+    .services-cta-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .services-cta-buttons a {
+        width: 100%;
+        justify-content: center;
     }
 }

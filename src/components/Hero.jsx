@@ -50,46 +50,46 @@ const Hero = () => {
                 >
                     <motion.div className="hero-badge" variants={itemVariants}>
                         <span className="hero-badge-icon"></span>
-                        7/24 Acil Yol Yardım Hizmeti
+                        Bölgenin 1 Numaralı Yol Yardım Firması
                     </motion.div>
 
                     <motion.h1 className="hero-title" variants={itemVariants}>
-                        Ataşehir <span className="highlight">Çekici</span> ve Yol Yardım Hizmeti
+                        Aracınız Yolda mı Kaldı? <span className="highlight">15 Dakikada</span> Yanınızdayız!
                     </motion.h1>
 
                     <motion.p className="hero-subtitle" variants={itemVariants}>
-                        Ataşehir ve İçerenköy'de hızlı, güvenilir oto kurtarma ve yol yardım hizmeti.
-                        Profesyonel ekibimiz her an yanınızda.
+                        Ataşehir ve çevresinde en hızlı, en güvenilir çekici hizmeti.
+                        <strong> Hızlıyız. Güveniliriz. 7/24 Buradayız.</strong>
                     </motion.p>
 
                     <motion.div className="hero-buttons" variants={itemVariants}>
-                        <a href="tel:05426216901" className="btn-primary">
+                        <a href="tel:05426216901" className="btn-primary btn-large">
                             <FaPhone />
-                            Hemen Ara
+                            Şimdi Ara - Hemen Geliyoruz
                         </a>
                         <a
-                            href="https://wa.me/905426216901?text=Merhaba,%20yol%20yardım%20hizmeti%20almak%20istiyorum."
+                            href="https://wa.me/905426216901?text=Merhaba,%20acil%20yol%20yardım%20istiyorum.%20Konum%20göndereceğim."
                             className="btn-secondary"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
                             <FaWhatsapp />
-                            WhatsApp
+                            WhatsApp ile Konum Gönder
                         </a>
                     </motion.div>
 
                     <motion.div className="hero-stats" variants={itemVariants}>
                         <div className="stat-item">
                             <span className="stat-value">15+</span>
-                            <span className="stat-label">Yıllık Deneyim</span>
+                            <span className="stat-label">Yıllık Tecrübe</span>
                         </div>
                         <div className="stat-item">
                             <span className="stat-value">5000+</span>
-                            <span className="stat-label">Mutlu Müşteri</span>
+                            <span className="stat-label">Kurtarılan Araç</span>
                         </div>
                         <div className="stat-item">
-                            <span className="stat-value">7/24</span>
-                            <span className="stat-label">Kesintisiz Hizmet</span>
+                            <span className="stat-value">15 dk</span>
+                            <span className="stat-label">Ortalama Varış</span>
                         </div>
                     </motion.div>
                 </motion.div>
@@ -112,36 +112,6 @@ const Hero = () => {
                                 <source src={truckVideo} type="video/mp4" />
                             </video>
                         </div>
-
-                        <motion.div
-                            className="floating-card card-1"
-                            initial={{ opacity: 0, x: 50 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: 0.8, duration: 0.6 }}
-                        >
-                            <div className="floating-card-icon">
-                                <FaClock />
-                            </div>
-                            <div className="floating-card-text">
-                                <span className="floating-card-title">Hızlı Varış</span>
-                                <span className="floating-card-subtitle">Ortalama 15-20 dakika</span>
-                            </div>
-                        </motion.div>
-
-                        <motion.div
-                            className="floating-card card-2"
-                            initial={{ opacity: 0, x: -50 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: 1, duration: 0.6 }}
-                        >
-                            <div className="floating-card-icon">
-                                <FaMapMarkerAlt />
-                            </div>
-                            <div className="floating-card-text">
-                                <span className="floating-card-title">Ataşehir Bölgesi</span>
-                                <span className="floating-card-subtitle">Tüm mahallelere hizmet</span>
-                            </div>
-                        </motion.div>
                     </div>
                 </motion.div>
             </div>

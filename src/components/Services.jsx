@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { FaTruckPickup, FaWrench, FaTruck, FaBolt } from 'react-icons/fa';
+import { FaTruckPickup, FaWrench, FaTruck, FaBolt, FaPhone } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import './Services.css';
 
 const Services = () => {
@@ -12,22 +13,22 @@ const Services = () => {
         {
             icon: <FaTruckPickup />,
             title: 'Oto Kurtarma',
-            description: 'Kazalı veya arızalı araçlarınızı güvenle kurtarıyoruz. Profesyonel ekipmanlarla hasarsız taşıma garantisi.',
+            description: 'Kazalı veya arızalı aracınızı çizik bile olmadan kurtarıyoruz. Sigortalı ve garantili hizmet.',
         },
         {
             icon: <FaWrench />,
-            title: 'Yol Yardım',
-            description: 'Lastik değişimi, akü takviyesi, yakıt ikmali gibi acil yol yardım hizmetleri.',
+            title: 'Yerinde Yol Yardım',
+            description: 'Aküsü biten, lastiği patlayan, yakıtı biten araçlara yerinde çözüm. Çekiciye gerek yok!',
         },
         {
             icon: <FaTruck />,
             title: 'Çekici Hizmeti',
-            description: 'Her tip araç için profesyonel çekici hizmeti. Şehir içi ve şehirler arası taşıma.',
+            description: 'Binek, SUV, hafif ticari - her araç tipi için profesyonel çekici. Uzun mesafede bile uygun fiyat.',
         },
         {
             icon: <FaBolt />,
-            title: 'Acil Müdahale',
-            description: '7/24 acil durum hattımız ile hızlı müdahale. Ortalama 15-20 dakikada yanınızdayız.',
+            title: '15 Dakika Müdahale',
+            description: 'Aramadan itibaren ortalama 15 dakikada yanınızdayız. Bölgedeki en hızlı ekip biziz.',
         },
     ];
 
@@ -63,11 +64,11 @@ const Services = () => {
                     transition={{ duration: 0.6 }}
                 >
                     <h2 className="section-title">
-                        <span className="text-gold">Profesyonel</span> Hizmetlerimiz
+                        Neden <span className="text-gold">Bizi</span> Tercih Etmelisiniz?
                     </h2>
                     <div className="separator" style={{ marginBottom: '20px' }}></div>
                     <p className="section-subtitle">
-                        Ataşehir ve çevresinde güvenilir oto kurtarma ve yol yardım hizmetleri sunuyoruz.
+                        15 yıllık tecrübe. 5000+ kurtarılan araç. Bölgenin en güvenilir yol yardım firması.
                     </p>
                 </motion.div>
 
@@ -88,6 +89,21 @@ const Services = () => {
                             <p className="service-description">{service.description}</p>
                         </motion.article>
                     ))}
+                </motion.div>
+
+                <motion.div
+                    className="services-cta"
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={isInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.6, delay: 0.5 }}
+                >
+                    <p>Tüm hizmetlerimizi inceleyin veya hemen bizi arayın.</p>
+                    <div className="services-cta-buttons">
+                        <Link to="/hizmetler" className="btn-secondary">Tüm Hizmetler</Link>
+                        <a href="tel:05426216901" className="btn-primary">
+                            <FaPhone /> Şimdi Ara
+                        </a>
+                    </div>
                 </motion.div>
             </div>
         </section>

@@ -1,0 +1,88 @@
+.floating-cta {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 1000;
+}
+
+.floating-cta-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 24px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    transition: all var(--transition-smooth);
+    text-decoration: none;
+}
+
+.floating-cta-btn svg {
+    font-size: 1.2rem;
+}
+
+.floating-cta-btn.phone-btn {
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-shadow) 100%);
+    color: var(--primary-bg);
+}
+
+.floating-cta-btn.phone-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 35px rgba(212, 166, 78, 0.4);
+}
+
+.floating-cta-btn.whatsapp-btn {
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    color: white;
+}
+
+.floating-cta-btn.whatsapp-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 35px rgba(37, 211, 102, 0.4);
+}
+
+/* Pulse animation for attention */
+.floating-cta-btn.phone-btn {
+    animation: ctaPulse 2s ease-in-out infinite;
+}
+
+@keyframes ctaPulse {
+
+    0%,
+    100% {
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 0 rgba(212, 166, 78, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 10px rgba(212, 166, 78, 0);
+    }
+}
+
+@media (max-width: 768px) {
+    .floating-cta {
+        bottom: 15px;
+        right: 15px;
+        left: 15px;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .floating-cta-btn {
+        flex: 1;
+        justify-content: center;
+        padding: 14px 16px;
+        font-size: 0.9rem;
+    }
+
+    .floating-cta-btn span {
+        display: none;
+    }
+
+    .floating-cta-btn svg {
+        font-size: 1.5rem;
+    }
+}

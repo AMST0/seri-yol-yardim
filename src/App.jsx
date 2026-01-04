@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import FloatingCTA from './components/FloatingCTA';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ServicesPage from './pages/ServicesPage';
@@ -22,6 +23,7 @@ function App() {
         </Routes>
       </main>
       <Footer />
+      <FloatingCTA />
     </Router>
   );
 }
