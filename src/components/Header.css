@@ -210,6 +210,18 @@
     font-size: 1.1rem;
 }
 
+/* Mobile brand name - hidden by default, shown only on mobile */
+.mobile-brand-name {
+    display: none;
+}
+
+/* Desktop: ensure hidden */
+@media (min-width: 901px) {
+    .mobile-brand-name {
+        display: none !important;
+    }
+}
+
 @media (max-width: 900px) {
     .nav-links {
         display: none;
@@ -221,5 +233,39 @@
 
     .mobile-menu-btn {
         display: flex;
+    }
+
+    .mobile-brand-name {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, rgba(212, 166, 78, 0.15) 0%, rgba(169, 124, 42, 0.1) 100%);
+        border: 2px solid var(--gold);
+        border-radius: 16px;
+        padding: 8px 16px;
+        flex: 1;
+        max-width: 180px;
+        margin: 0 12px;
+    }
+
+    .brand-text-seri {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 900;
+        font-size: 1.15rem;
+        color: var(--gold);
+        letter-spacing: 1px;
+        line-height: 1.1;
+        text-transform: uppercase;
+    }
+
+    .brand-text-yardim {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 800;
+        font-size: 0.9rem;
+        color: var(--white);
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        line-height: 1.2;
     }
 }

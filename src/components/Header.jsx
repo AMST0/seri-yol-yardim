@@ -44,6 +44,12 @@ const Header = () => {
           <img src={logo} alt="Seri Yol Yardım Logo" className="logo-img" />
         </Link>
 
+        {/* Mobile Brand Name - Only visible on mobile */}
+        <div className="mobile-brand-name">
+          <span className="brand-text-seri">SERİ YOL</span>
+          <span className="brand-text-yardim">YARDIM</span>
+        </div>
+
         <nav className="nav">
           <ul className="nav-links">
             {navItems.map((item, index) => (
