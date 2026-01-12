@@ -1,0 +1,9 @@
+# Seri Yol Yardım - robots.txt
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://seriyolyardim.com/sitemap.xml
+
+# Block admin/internal paths if any
+Disallow: /api/
