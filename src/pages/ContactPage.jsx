@@ -7,7 +7,7 @@ const ContactPage = () => {
         {
             icon: <FaPhone />,
             title: 'Telefon',
-            lines: ['0542 621 69 01', '0531 201 60 10'],
+            lines: ['0542 621 69 01'],
             href: 'tel:05426216901',
         },
         {

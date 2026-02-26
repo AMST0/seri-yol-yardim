@@ -62,9 +62,6 @@ const Contact = () => {
                                             0542 621 69 01
                                             <span className="phone-type">Ana Hat</span>
                                         </a>
-                                        <a href="tel:05312016010" className="phone-link">
-                                            0531 201 60 10
-                                        </a>
                                     </div>
                                 </div>
                             </motion.div>
