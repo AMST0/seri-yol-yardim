@@ -1,8 +1,13 @@
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaPhone, FaWhatsapp, FaMapMarkerAlt, FaClock, FaEnvelope } from 'react-icons/fa';
 import './pages.css';
 
 const ContactPage = () => {
+    useEffect(() => {
+        document.title = 'İletişim | Mezitli Çekici - SERİ YOL YARDIM';
+        document.querySelector('meta[name="description"]')?.setAttribute('content', 'Seri Yol Yardım iletişim bilgileri. Fatih Mahallesi, 30042 Sk. No:4, Mezitli/Mersin. 7/24 bize ulaşın: 0542 621 69 01');
+    }, []);
     const contactInfo = [
         {
             icon: <FaPhone />,

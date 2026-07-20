@@ -7,3 +7,17 @@ Sitemap: https://seriyolyardim.com/sitemap.xml
 
 # Block admin/internal paths if any
 Disallow: /api/
+Disallow: /.git/
+
+# Allow crawlers to access all important content
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+
+User-agent: Yandex
+Allow: /
+Crawl-delay: 2

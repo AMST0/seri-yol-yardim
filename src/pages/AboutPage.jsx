@@ -1,10 +1,15 @@
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FaPhone, FaWhatsapp, FaChevronDown, FaHistory, FaUsers, FaAward, FaTruck, FaShieldAlt, FaClock } from 'react-icons/fa';
 import './pages.css';
 
 const AboutPage = () => {
     const [openFaq, setOpenFaq] = useState(null);
+
+    useEffect(() => {
+        document.title = 'Hakkımızda | Mezitli Çekici - SERİ YOL YARDIM';
+        document.querySelector('meta[name="description"]')?.setAttribute('content', 'Mezitli ve Mersin\'de 15+ yıldır profesyonel oto kurtarma ve yol yardım hizmeti. 5000+ kurtarılan araç, 7/24 kesintisiz hizmet.');
+    }, []);
 
     const stats = [
         { icon: <FaHistory />, value: '15+', label: 'Yıllık Deneyim' },

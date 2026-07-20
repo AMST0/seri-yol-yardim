@@ -1,8 +1,13 @@
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaPhone, FaWhatsapp, FaTruck, FaCarBattery, FaTools, FaRoad, FaMotorcycle, FaShuttleVan, FaCarCrash, FaKey } from 'react-icons/fa';
 import './pages.css';
 
 const ServicesPage = () => {
+    useEffect(() => {
+        document.title = 'Hizmetlerimiz | Mezitli Çekici - SERİ YOL YARDIM';
+        document.querySelector('meta[name="description"]')?.setAttribute('content', 'Mezitli ve Mersin\'de 7/24 oto çekici, akü takviye, lastik değişimi, kaza kurtarma, motosiklet çekici ve uzun mesafe taşıma hizmetleri.');
+    }, []);
     const services = [
         {
             icon: <FaTruck />,
