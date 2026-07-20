@@ -45,7 +45,7 @@ const Contact = () => {
                                 <span className="text-gold">Bize</span> Ulaşın
                             </h2>
                             <p>
-                                Ataşehir ve İçerenköy'de 7/24 hizmetinizdeyiz.
+                                Mezitli ve Mersin'de 7/24 hizmetinizdeyiz.
                                 Herhangi bir sorunuzda veya acil yardım için bizi arayabilirsiniz.
                             </p>
                         </motion.div>
@@ -91,9 +91,9 @@ const Contact = () => {
                                 <div className="contact-item-content">
                                     <span className="contact-item-label">Adres</span>
                                     <div className="contact-item-value">
-                                        İçerenköy Mahallesi, Aşkent Sokak No:22
+                                        Fatih Mahallesi, 30042 Sk. No:4
                                         <br />
-                                        <span style={{ color: 'var(--gray)', fontSize: '0.95rem' }}>Ataşehir / İstanbul</span>
+                                        <span style={{ color: 'var(--gray)', fontSize: '0.95rem' }}>Mezitli / Mersin</span>
                                     </div>
                                 </div>
                             </motion.div>
@@ -122,7 +122,7 @@ const Contact = () => {
                     >
                         <div className="map-wrapper">
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12042.890259772895!2d29.10!3d40.98!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cac7e8e33c9a47%3A0x7b8d6a6c8f9e3f12!2sİçerenköy%2C%20Ataşehir%2FIstanbul!5e0!3m2!1sen!2str!4v1704000000000!5m2!1sen!2str"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3197.5!2d34.56!3d36.75!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sFatih%20Mah.%20Mezitli%2FMersin!5e0!3m2!1str!2str!4v1704000000000!5m2!1str!2str"
                                 allowFullScreen=""
                                 loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"
@@ -131,10 +131,10 @@ const Contact = () => {
                             <div className="map-overlay">
                                 <div className="map-overlay-text">
                                     <span className="map-overlay-title">SERİ YOL YARDIM</span>
-                                    <span className="map-overlay-address">İçerenköy, Ataşehir</span>
+                                    <span className="map-overlay-address">Fatih Mah. Mezitli, Mersin</span>
                                 </div>
                                 <a
-                                    href="https://www.google.com/maps/dir//İçerenköy+Mahallesi,+Aşkent+Sokak+No:22,+Ataşehir,+Istanbul"
+                                    href="https://www.google.com/maps/dir//Fatih+Mahallesi,+30042+Sk.+No:4,+Mezitli,+Mersin"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="map-overlay-btn"

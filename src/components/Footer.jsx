@@ -34,7 +34,7 @@ const Footer = () => {
                             <img src={logo} alt="Seri Yol Yardım Logo" className="footer-logo-img" />
                         </Link>
                         <p className="footer-slogan">
-                            Ataşehir ve İçerenköy'de 7/24 güvenilir oto kurtarma ve yol yardım hizmeti.
+                            Mezitli ve Mersin'de 7/24 güvenilir oto kurtarma ve yol yardım hizmeti.
                             Profesyonel ekibimizle her an yanınızdayız.
                         </p>
                         <div className="footer-social">
@@ -90,10 +90,10 @@ const Footer = () => {
                     <div className="footer-column">
                         <h4>Hizmet Bölgelerimiz</h4>
                         <p className="footer-service-areas">
-                            <strong>Merkez:</strong> Ataşehir, İçerenköy
+                            <strong>Merkez:</strong> Mezitli, Fatih Mahallesi
                         </p>
                         <p className="footer-service-areas secondary">
-                            Kadıköy, Maltepe, Ümraniye, Üsküdar, Kartal, Pendik, Tuzla, Sancaktepe, Çekmeköy, Sultanbeyli, Beykoz, Şile ve tüm Anadolu Yakası
+                            Yenişehir, Akdeniz, Toroslar, Tarsus, Erdemli, Silifke, Anamur ve tüm Mersin
                         </p>
                     </div>
 
@@ -134,7 +134,7 @@ const Footer = () => {
                             <div className="footer-contact-text">
                                 <span className="footer-contact-label">Adres</span>
                                 <span className="footer-contact-value">
-                                    İçerenköy Mah. Ataşehir / İstanbul
+                                    Fatih Mah. Mezitli / Mersin
                                 </span>
                             </div>
                         </div>

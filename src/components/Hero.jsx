@@ -58,7 +58,7 @@ const Hero = () => {
                     </motion.h1>
 
                     <motion.p className="hero-subtitle" variants={itemVariants}>
-                        Ataşehir ve çevresinde en hızlı, en güvenilir çekici hizmeti.
+                        Mezitli ve Mersin çevresinde en hızlı, en güvenilir çekici hizmeti.
                         <strong> Hızlıyız. Güveniliriz. 7/24 Buradayız.</strong>
                     </motion.p>
 

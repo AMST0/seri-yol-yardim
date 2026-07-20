@@ -85,11 +85,11 @@ const Fleet = () => {
                         </motion.div>
 
                         <motion.h2 className="fleet-title" variants={itemVariants}>
-                            Ataşehir'de <span className="text-gold">Profesyonel Çekici</span> Araçlarımız
+                            Mezitli'de <span className="text-gold">Profesyonel Çekici</span> Araçlarımız
                         </motion.h2>
 
                         <motion.p className="fleet-description" variants={itemVariants}>
-                            Modern donanımlı çekici araçlarımız ile Ataşehir ve İçerenköy'de 7/24 güvenli
+                            Modern donanımlı çekici araçlarımız ile Mezitli ve Mersin'de 7/24 güvenli
                             oto kurtarma hizmeti sunuyoruz. Araçlarınız özel sabitleme sistemleri ile
                             zarar görmeden taşınır.
                         </motion.p>

@@ -67,7 +67,7 @@ const Advantages = () => {
                     </h2>
                     <div className="separator" style={{ marginBottom: '20px' }}></div>
                     <p className="section-subtitle">
-                        Ataşehir'in en güvenilir yol yardım hizmeti olarak müşteri memnuniyetini ön planda tutuyoruz.
+                        Mezitli'nin en güvenilir yol yardım hizmeti olarak müşteri memnuniyetini ön planda tutuyoruz.
                     </p>
                 </motion.div>
 

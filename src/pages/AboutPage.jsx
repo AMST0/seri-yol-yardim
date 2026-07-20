@@ -34,7 +34,7 @@ const AboutPage = () => {
         },
         {
             question: 'Çekici ne kadar sürede gelir?',
-            answer: 'Ataşehir ve İçerenköy bölgesinde ortalama 15-20 dakika içinde yanınızda oluyoruz.'
+            answer: 'Mezitli ve Mersin bölgesinde ortalama 15-20 dakika içinde yanınızda oluyoruz.'
         },
         {
             question: 'Taşıma sırasında araca zarar gelir mi?',
@@ -61,7 +61,7 @@ const AboutPage = () => {
                     transition={{ duration: 0.6 }}
                 >
                     <h1>Hakkımızda</h1>
-                    <p>Ataşehir'de 15+ yıldır güvenilir yol yardım hizmeti</p>
+                    <p>Mezitli'de 15+ yıldır güvenilir yol yardım hizmeti</p>
                 </motion.div>
             </section>
 
@@ -78,13 +78,13 @@ const AboutPage = () => {
                         >
                             <h2>SERİ YOL YARDIM</h2>
                             <p>
-                                2009 yılından bu yana <strong>Ataşehir ve İçerenköy</strong> bölgesinde profesyonel oto kurtarma ve
+                                2009 yılından bu yana <strong>Mezitli ve Mersin</strong> bölgesinde profesyonel oto kurtarma ve
                                 yol yardım hizmeti sunuyoruz. Modern araç filomuz ve deneyimli ekibimizle
                                 7/24 yanınızdayız.
                             </p>
                             <p>
-                                Merkez lokasyonumuz Ataşehir olmak üzere; Kadıköy, Maltepe, Ümraniye, Üsküdar,
-                                Kartal, Pendik ve tüm Anadolu Yakası'na hızlı müdahale sağlıyoruz.
+                                Merkez lokasyonumuz Mezitli olmak üzere; Yenişehir, Akdeniz, Toroslar,
+                                Tarsus, Erdemli ve tüm Mersin'e hızlı müdahale sağlıyoruz.
                             </p>
                             <p>
                                 Müşteri memnuniyetini ön planda tutarak, her çağrıya en kısa sürede ulaşıyor

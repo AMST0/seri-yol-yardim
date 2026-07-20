@@ -7,7 +7,7 @@ const ServicesPage = () => {
         {
             icon: <FaTruck />,
             title: '7/24 Oto Çekici',
-            description: 'Gece gündüz demeden, her an yanınızdayız. Ataşehir ve çevresinde 15-20 dakikada ulaşıyoruz.',
+            description: 'Gece gündüz demeden, her an yanınızdayız. Mezitli ve çevresinde 15-20 dakikada ulaşıyoruz.',
             features: ['Acil müdahale', 'Sigortalı taşıma', 'Flatbed çekici'],
         },
         {
@@ -65,7 +65,7 @@ const ServicesPage = () => {
                     transition={{ duration: 0.6 }}
                 >
                     <h1>Hizmetlerimiz</h1>
-                    <p>Ataşehir ve İçerenköy'de 7/24 profesyonel yol yardım hizmetleri</p>
+                    <p>Mezitli ve Mersin'de 7/24 profesyonel yol yardım hizmetleri</p>
                 </motion.div>
             </section>
 

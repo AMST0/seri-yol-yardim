@@ -19,7 +19,7 @@ const ContactPage = () => {
         {
             icon: <FaMapMarkerAlt />,
             title: 'Hizmet Bölgesi',
-            lines: ['Ataşehir, İçerenköy', 'Kadıköy, Ümraniye'],
+            lines: ['Mezitli, Fatih Mah.', 'Yenişehir, Toroslar'],
             href: null,
         },
         {
@@ -94,14 +94,14 @@ const ContactPage = () => {
                             transition={{ duration: 0.6 }}
                         >
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1547.4566373780517!2d29.102377035650146!3d40.970188683515865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cac64455555555%3A0x1234567890abcdef!2zScOnZXJlbmvDtnksIEFWc2tlbnQgU2suIE5vOjIyLCAzNDc1MiBBdGHFn2VoaXIvxLBzdGFuYnVs!5e0!3m2!1str!2str!4v1709664654321!5m2!1str!2str"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3197.5!2d34.56!3d36.75!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sFatih%20Mah.%20Mezitli%2FMersin!5e0!3m2!1str!2str!4v1704000000000!5m2!1str!2str"
                                 width="100%"
                                 height="100%"
                                 style={{ border: 0, borderRadius: '20px', minHeight: '400px' }}
                                 allowFullScreen=""
                                 loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"
-                                title="İçerenköy Mahallesi Aşkent Sokak No:22 Harita"
+                                title="Fatih Mahallesi 30042 Sk. No:4 Mezitli/Mersin Harita"
                             ></iframe>
                         </motion.div>
                     </div>
