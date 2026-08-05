@@ -23,6 +23,8 @@
     max-width: var(--container-max);
     margin: 0 auto;
     padding: 0 20px;
+    position: relative;
+    z-index: 102;
 }
 
 .logo {
@@ -160,6 +162,12 @@
     gap: 5px;
     padding: 10px;
     background: transparent;
+    min-width: 44px;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 103;
 }
 
 .mobile-menu-btn span {
@@ -182,7 +190,7 @@
     padding: 120px 30px 40px;
     flex-direction: column;
     gap: 8px;
-    z-index: 99;
+    z-index: 101;
     overflow-y: auto;
 }
 
@@ -208,6 +216,15 @@
     justify-content: center;
     padding: 16px 30px;
     font-size: 1.1rem;
+}
+
+.mobile-menu-call {
+    margin-top: 18px;
+    text-align: center;
+}
+
+body.menu-open {
+    overflow: hidden;
 }
 
 /* Mobile brand name - hidden by default, shown only on mobile */

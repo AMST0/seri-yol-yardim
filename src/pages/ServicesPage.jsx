@@ -1,61 +1,69 @@
-import { useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { FaPhone, FaWhatsapp, FaTruck, FaCarBattery, FaTools, FaRoad, FaMotorcycle, FaShuttleVan, FaCarCrash, FaKey } from 'react-icons/fa';
+import { motion as Motion } from 'framer-motion';
+import { FaPhone, FaWhatsapp, FaTruck, FaCarBattery, FaTools, FaRoad, FaMotorcycle, FaShuttleVan, FaCarCrash, FaKey, FaCar } from 'react-icons/fa';
+import { SITE, createWhatsappUrl } from '../data/site';
+import usePageMeta from '../hooks/usePageMeta';
 import './pages.css';
 
 const ServicesPage = () => {
-    useEffect(() => {
-        document.title = 'Hizmetlerimiz | Mezitli Çekici - SERİ YOL YARDIM';
-        document.querySelector('meta[name="description"]')?.setAttribute('content', 'Mezitli ve Mersin\'de 7/24 oto çekici, akü takviye, lastik değişimi, kaza kurtarma, motosiklet çekici ve uzun mesafe taşıma hizmetleri.');
-    }, []);
+    usePageMeta({
+        title: 'Hizmetlerimiz | Mezitli Çekici - SERİ YOL YARDIM',
+        description: 'Mersin ve Mezitli\'de 7/24 oto çekici, akü takviyesi, stepne değişimi, kaza kurtarma, motosiklet ve özel araç transferi hizmetleri.',
+        path: '/hizmetler',
+    });
     const services = [
         {
             icon: <FaTruck />,
             title: '7/24 Oto Çekici',
-            description: 'Gece gündüz demeden, her an yanınızdayız. Mezitli ve çevresinde 15-20 dakikada ulaşıyoruz.',
-            features: ['Acil müdahale', 'Sigortalı taşıma', 'Flatbed çekici'],
+            description: 'Mezitli merkezli ekibimizle Mersin genelinde gece gündüz çekici desteği sağlıyoruz.',
+            features: ['Kayar platform', 'Araca uygun ekipman', 'Mersin geneli'],
         },
         {
             icon: <FaCarBattery />,
             title: 'Akü Takviye',
-            description: 'Aracınız çalışmıyor mu? Akü takviye hizmetimizle hemen yardıma geliyoruz.',
-            features: ['Yerinde servis', 'Tüm araç markaları', 'Hızlı müdahale'],
+            description: 'Akü kaynaklı çalışmama durumlarında aracı yerinde değerlendirip uygun takviyeyi uyguluyoruz.',
+            features: ['Yerinde değerlendirme', 'Akü takviyesi', 'Gerekirse çekici'],
         },
         {
             icon: <FaTools />,
             title: 'Lastik Değişimi',
-            description: 'Patlak lastik mi? Stepne takma veya lastik onarım hizmeti sunuyoruz.',
-            features: ['Stepne montajı', 'Lastik tamiri', '7/24 hizmet'],
+            description: 'Kullanılabilir stepneniz varsa yerinde değişim yapıyor, ağır hasarda aracı servise taşıyoruz.',
+            features: ['Stepne değişimi', 'Jant kontrolü', 'Gerekirse taşıma'],
         },
         {
             icon: <FaCarCrash />,
             title: 'Kaza Kurtarma',
-            description: 'Kaza sonrası araç kurtarma ve çekici hizmeti. Sigorta işlemlerinde yardımcı oluyoruz.',
-            features: ['Kaza sonrası destek', 'Sigorta koordinasyonu', 'Güvenli çekim'],
+            description: 'Hareket kabiliyeti azalan kazalı araçları durumuna uygun yöntemle platforma alıyoruz.',
+            features: ['Hasarlı araç yükleme', 'Özel sabitleme', 'Servise taşıma'],
         },
         {
             icon: <FaRoad />,
             title: 'Uzun Mesafe Taşıma',
-            description: 'Şehirler arası araç taşıma hizmeti. Aracınızı güvenle istediğiniz şehre taşıyoruz.',
-            features: ['Şehirler arası', 'Kapalı araç taşıma', 'Takip sistemi'],
+            description: 'Mersin çıkışlı veya Mersin varışlı şehirler arası araç transferi planlıyoruz.',
+            features: ['Şehirler arası', 'Adresten adrese', 'Önceden fiyat bilgisi'],
         },
         {
             icon: <FaMotorcycle />,
             title: 'Motosiklet Çekici',
-            description: 'Motosikletiniz için özel çekici hizmeti. Hasar vermeden güvenle taşıyoruz.',
-            features: ['Özel sabitleme', 'Her marka', 'Dikkatli taşıma'],
+            description: 'Motosikletleri iki tekerli araçlara uygun bağlantı ve sabitleme ekipmanlarıyla taşıyoruz.',
+            features: ['Özel sabitleme', 'Uygun bağlantı noktaları', 'Güvenli transfer'],
         },
         {
             icon: <FaShuttleVan />,
             title: 'Ticari Araç Çekici',
             description: 'Minibüs, kamyonet ve hafif ticari araçlar için profesyonel çekici hizmeti.',
-            features: ['Ağır yük kapasitesi', 'Ticari filolar', 'Kurumsal hizmet'],
+            features: ['Araç ölçüsüne uygun seçim', 'Yük bilgisi kontrolü', 'Güvenli sabitleme'],
         },
         {
             icon: <FaKey />,
             title: 'Araçta Kilitli Kalma',
-            description: 'Anahtarınız arabada mı kaldı? Hasarsız kapı açma hizmeti sunuyoruz.',
-            features: ['Hasarsız açım', 'Hızlı çözüm', 'Tüm modeller'],
+            description: 'Anahtarın araç içinde kaldığı durumlarda model ve kilit sistemine uygun çözüm uyguluyoruz.',
+            features: ['Model değerlendirmesi', 'Uygun açma yöntemi', 'Yerinde destek'],
+        },
+        {
+            icon: <FaCar />,
+            title: 'Özel Araç Transferi',
+            description: 'Dijital kilitli, otomatik, elektrikli, 4x4 veya tekerlekleri dönmeyen araçları özel aparatlarla taşıyoruz.',
+            features: ['Oto transfer aparatları', 'Aktarma sistemini koruma', 'Platformlu taşıma'],
         },
     ];
 
@@ -63,7 +71,7 @@ const ServicesPage = () => {
         <div className="page services-page">
             {/* Hero Section */}
             <section className="page-hero">
-                <motion.div
+                <Motion.div
                     className="page-hero-content"
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -71,15 +79,16 @@ const ServicesPage = () => {
                 >
                     <h1>Hizmetlerimiz</h1>
                     <p>Mezitli ve Mersin'de 7/24 profesyonel yol yardım hizmetleri</p>
-                </motion.div>
+                </Motion.div>
             </section>
 
             {/* Services Grid */}
             <section className="services-grid-section">
                 <div className="container">
+                    <h2 className="visually-hidden">Yol yardım ve araç taşıma hizmetleri</h2>
                     <div className="services-grid">
                         {services.map((service, index) => (
-                            <motion.div
+                            <Motion.article
                                 key={index}
                                 className="service-card-full"
                                 initial={{ opacity: 0, y: 30 }}
@@ -95,7 +104,7 @@ const ServicesPage = () => {
                                         <li key={i}>{feature}</li>
                                     ))}
                                 </ul>
-                            </motion.div>
+                            </Motion.article>
                         ))}
                     </div>
                 </div>
@@ -104,20 +113,20 @@ const ServicesPage = () => {
             {/* CTA Section */}
             <section className="services-cta">
                 <div className="container">
-                    <motion.div
+                    <Motion.div
                         className="cta-box"
                         initial={{ opacity: 0, scale: 0.95 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                     >
                         <h2>Yol Yardıma mı İhtiyacınız Var?</h2>
-                        <p>Hemen arayın, 15-20 dakika içinde yanınızda olalım!</p>
+                        <p>Konumunuzu ve araç bilgilerini paylaşın; uygun ekipmanı yönlendirelim.</p>
                         <div className="cta-buttons">
-                            <a href="tel:05426216901" className="btn-primary btn-large">
-                                <FaPhone /> 0542 621 69 01
+                            <a href={SITE.phoneHref} className="btn-primary btn-large">
+                                <FaPhone /> {SITE.phoneDisplay}
                             </a>
                             <a
-                                href="https://wa.me/905426216901"
+                                href={createWhatsappUrl('Merhaba, yol yardım hizmeti almak istiyorum.')}
                                 className="btn-secondary btn-large"
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -125,7 +134,7 @@ const ServicesPage = () => {
                                 <FaWhatsapp /> WhatsApp
                             </a>
                         </div>
-                    </motion.div>
+                    </Motion.div>
                 </div>
             </section>
         </div>

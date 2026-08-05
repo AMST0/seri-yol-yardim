@@ -1,10 +1,11 @@
-import { motion } from 'framer-motion';
+import { motion as Motion } from 'framer-motion';
 import { FaPhone, FaExclamationTriangle } from 'react-icons/fa';
+import { SITE } from '../data/site';
 import './UrgentBanner.css';
 
 const UrgentBanner = () => {
     return (
-        <motion.section
+        <Motion.section
             className="urgent-banner"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -16,15 +17,15 @@ const UrgentBanner = () => {
                     <FaExclamationTriangle />
                 </div>
                 <div className="urgent-text">
-                    <h3>Yolda Kaldıysanız Zaman Kaybetmeyin!</h3>
-                    <p>Tek bir arama ile <strong>15 dakika içinde</strong> yanınızdayız.</p>
+                    <h2>Yolda Kaldıysanız Zaman Kaybetmeyin!</h2>
+                    <p>Konumunuzu paylaşın; uygun ekipmanı yönlendirip tahmini varış süresini bildirelim.</p>
                 </div>
-                <a href="tel:05426216901" className="urgent-cta">
+                <a href={SITE.phoneHref} className="urgent-cta">
                     <FaPhone />
-                    <span>0542 621 69 01</span>
+                    <span>{SITE.phoneDisplay}</span>
                 </a>
             </div>
-        </motion.section>
+        </Motion.section>
     );
 };
 

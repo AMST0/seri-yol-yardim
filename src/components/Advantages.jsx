@@ -1,7 +1,8 @@
-import { motion } from 'framer-motion';
+import { motion as Motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { FaClock, FaBolt, FaUsers, FaTag, FaPhone, FaWhatsapp } from 'react-icons/fa';
+import { SITE, createWhatsappUrl } from '../data/site';
 import './Advantages.css';
 
 const Advantages = () => {
@@ -16,18 +17,18 @@ const Advantages = () => {
         },
         {
             icon: <FaBolt />,
-            title: 'Hızlı Müdahale',
-            description: 'Ortalama 15-20 dakikada konumunuza ulaşıyoruz.',
+            title: 'Doğru Ekipman',
+            description: 'Araç ve konum bilgisine göre uygun çekici ve aparat yönlendirilir.',
         },
         {
             icon: <FaUsers />,
-            title: 'Güvenilir Ekip',
-            description: '15+ yıl deneyimli, profesyonel ekibimiz.',
+            title: 'Yerel Ekip',
+            description: 'Mezitli merkezli olarak Mersin genelinde hizmet veriyoruz.',
         },
         {
             icon: <FaTag />,
-            title: 'Uygun Fiyat',
-            description: 'Rekabetçi fiyatlar, sürpriz ücret yok.',
+            title: 'Net Bilgilendirme',
+            description: 'Konum, araç ve taşıma koşullarına göre hizmet öncesi fiyat paylaşılır.',
         },
     ];
 
@@ -56,7 +57,7 @@ const Advantages = () => {
     return (
         <section className="advantages section" id="advantages" ref={ref}>
             <div className="container">
-                <motion.div
+                <Motion.div
                     className="services-header"
                     initial={{ opacity: 0, y: 30 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -69,16 +70,16 @@ const Advantages = () => {
                     <p className="section-subtitle">
                         Mezitli'nin en güvenilir yol yardım hizmeti olarak müşteri memnuniyetini ön planda tutuyoruz.
                     </p>
-                </motion.div>
+                </Motion.div>
 
-                <motion.div
+                <Motion.div
                     className="advantages-grid"
                     variants={containerVariants}
                     initial="hidden"
                     animate={isInView ? 'visible' : 'hidden'}
                 >
                     {advantages.map((advantage, index) => (
-                        <motion.div
+                        <Motion.div
                             key={index}
                             className="advantage-item"
                             variants={itemVariants}
@@ -86,11 +87,11 @@ const Advantages = () => {
                             <div className="advantage-icon">{advantage.icon}</div>
                             <h3 className="advantage-title">{advantage.title}</h3>
                             <p className="advantage-description">{advantage.description}</p>
-                        </motion.div>
+                        </Motion.div>
                     ))}
-                </motion.div>
+                </Motion.div>
 
-                <motion.div
+                <Motion.div
                     className="cta-banner"
                     initial={{ opacity: 0, y: 50 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -101,12 +102,12 @@ const Advantages = () => {
                         <p className="cta-text">Hemen arayın, en kısa sürede yanınızda olalım!</p>
                     </div>
                     <div className="cta-buttons">
-                        <a href="tel:05426216901" className="cta-btn">
+                        <a href={SITE.phoneHref} className="cta-btn">
                             <FaPhone />
-                            0542 621 69 01
+                            {SITE.phoneDisplay}
                         </a>
                         <a
-                            href="https://wa.me/905426216901?text=Merhaba,%20acil%20yol%20yardımı%20istiyorum."
+                            href={createWhatsappUrl('Merhaba, acil yol yardımı almak istiyorum.')}
                             className="cta-btn whatsapp"
                             target="_blank"
                             rel="noopener noreferrer"
@@ -115,7 +116,7 @@ const Advantages = () => {
                             WhatsApp
                         </a>
                     </div>
-                </motion.div>
+                </Motion.div>
             </div>
         </section>
     );

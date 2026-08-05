@@ -7,7 +7,7 @@
 }
 
 .page-hero {
-    padding: 160px 20px 80px;
+    padding: 150px 20px 64px;
     background: linear-gradient(180deg, rgba(212, 166, 78, 0.08) 0%, transparent 100%);
     text-align: center;
 }
@@ -174,6 +174,94 @@
     padding: 80px 0;
 }
 
+.faq-page-section {
+    padding-top: 54px;
+}
+
+.faq-page-intro {
+    max-width: 720px;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+
+.faq-page-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 16px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(212, 166, 78, 0.4);
+    border-radius: 999px;
+    background: rgba(212, 166, 78, 0.08);
+    color: var(--gold);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.faq-page-intro h2 {
+    margin-bottom: 16px;
+    color: var(--white);
+    font-size: clamp(1.9rem, 4vw, 2.75rem);
+}
+
+.faq-page-intro p {
+    color: var(--gray);
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.faq-category-nav {
+    max-width: 980px;
+    margin: 0 auto 70px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+.faq-category-nav a {
+    padding: 10px 16px;
+    border: 1px solid var(--tertiary-bg);
+    border-radius: 999px;
+    background: var(--secondary-bg);
+    color: var(--gray-light);
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.25s ease;
+}
+
+.faq-category-nav a:hover,
+.faq-category-nav a:focus-visible {
+    border-color: var(--gold);
+    color: var(--gold);
+    outline: none;
+}
+
+.faq-groups {
+    display: grid;
+    gap: 72px;
+}
+
+.faq-category {
+    scroll-margin-top: 120px;
+}
+
+.faq-category-heading {
+    max-width: 800px;
+    margin: 0 auto 28px;
+}
+
+.faq-category-heading h2 {
+    margin-bottom: 8px;
+    color: var(--white);
+    font-size: clamp(1.55rem, 3vw, 2rem);
+}
+
+.faq-category-heading p {
+    color: var(--gray);
+    line-height: 1.7;
+}
+
 .faq-list {
     max-width: 800px;
     margin: 0 auto;
@@ -208,6 +296,15 @@
     text-align: left;
 }
 
+.faq-question:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: -4px;
+}
+
+.faq-item h3 {
+    margin: 0;
+}
+
 .faq-question span {
     font-size: 1.1rem;
     font-weight: 600;
@@ -231,13 +328,17 @@
 }
 
 .faq-item.open .faq-answer {
-    max-height: 200px;
+    max-height: 360px;
     padding: 0 30px 24px;
 }
 
 .faq-answer p {
     color: var(--gray);
     line-height: 1.7;
+}
+
+.faq-support-section {
+    padding: 20px 0 100px;
 }
 
 /* ==================== */
@@ -250,7 +351,7 @@
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 24px;
 }
 
@@ -355,6 +456,42 @@
 }
 
 /* ==================== */
+/* NOT FOUND PAGE       */
+/* ==================== */
+
+.not-found-page {
+    display: grid;
+    place-items: center;
+    padding: 150px 20px 100px;
+    text-align: center;
+}
+
+.not-found-content {
+    max-width: 680px;
+}
+
+.not-found-code {
+    display: block;
+    margin-bottom: 12px;
+    color: var(--gold);
+    font-family: var(--font-heading);
+    font-size: clamp(4rem, 14vw, 8rem);
+    font-weight: 800;
+    line-height: 1;
+}
+
+.not-found-content h1 {
+    margin-bottom: 16px;
+    font-size: clamp(2rem, 5vw, 3.25rem);
+}
+
+.not-found-content p {
+    margin-bottom: 32px;
+    color: var(--gray);
+    font-size: 1.1rem;
+}
+
+/* ==================== */
 /* CONTACT PAGE         */
 /* ==================== */
 
@@ -447,12 +584,6 @@
 /* RESPONSIVE           */
 /* ==================== */
 
-@media (max-width: 1200px) {
-    .services-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
 @media (max-width: 900px) {
     .about-grid {
         grid-template-columns: 1fr;
@@ -498,5 +629,44 @@
 
     .contact-cta {
         padding: 40px 25px;
+    }
+
+    .faq-section {
+        padding: 60px 0;
+    }
+
+    .faq-category-nav {
+        margin-bottom: 55px;
+        justify-content: flex-start;
+    }
+
+    .faq-category-nav a {
+        padding: 9px 13px;
+        font-size: 0.82rem;
+    }
+
+    .faq-groups {
+        gap: 55px;
+    }
+
+    .faq-category-heading {
+        margin-bottom: 22px;
+    }
+
+    .faq-question {
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .faq-question span {
+        font-size: 1rem;
+    }
+
+    .faq-item.open .faq-answer {
+        padding: 0 20px 20px;
+    }
+
+    .faq-support-section {
+        padding-bottom: 70px;
     }
 }

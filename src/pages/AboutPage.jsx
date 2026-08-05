@@ -1,80 +1,49 @@
-import { motion } from 'framer-motion';
-import { useState, useEffect } from 'react';
-import { FaPhone, FaWhatsapp, FaChevronDown, FaHistory, FaUsers, FaAward, FaTruck, FaShieldAlt, FaClock } from 'react-icons/fa';
+import { motion as Motion } from 'framer-motion';
+import { FaPhone, FaWhatsapp, FaHistory, FaUsers, FaAward, FaTruck, FaShieldAlt, FaClock } from 'react-icons/fa';
+import { SITE } from '../data/site';
+import usePageMeta from '../hooks/usePageMeta';
 import './pages.css';
 
 const AboutPage = () => {
-    const [openFaq, setOpenFaq] = useState(null);
-
-    useEffect(() => {
-        document.title = 'Hakkımızda | Mezitli Çekici - SERİ YOL YARDIM';
-        document.querySelector('meta[name="description"]')?.setAttribute('content', 'Mezitli ve Mersin\'de 15+ yıldır profesyonel oto kurtarma ve yol yardım hizmeti. 5000+ kurtarılan araç, 7/24 kesintisiz hizmet.');
-    }, []);
+    usePageMeta({
+        title: 'Hakkımızda | Mezitli Çekici - SERİ YOL YARDIM',
+        description: '2009 yılından bu yana Mezitli ve Mersin genelinde 7/24 oto kurtarma, güvenli araç taşıma ve yol yardım hizmeti sunuyoruz.',
+        path: '/hakkimizda',
+    });
 
     const stats = [
-        { icon: <FaHistory />, value: '15+', label: 'Yıllık Deneyim' },
-        { icon: <FaUsers />, value: '5000+', label: 'Mutlu Müşteri' },
-        { icon: <FaTruck />, value: '10+', label: 'Profesyonel Araç' },
+        { icon: <FaHistory />, value: '2009', label: 'Kuruluş Yılı' },
+        { icon: <FaUsers />, value: 'Mersin', label: 'İl Geneli Hizmet' },
+        { icon: <FaTruck />, value: 'Güvenli', label: 'Araç Transferi' },
         { icon: <FaAward />, value: '7/24', label: 'Kesintisiz Hizmet' },
     ];
 
     const values = [
-        { icon: <FaShieldAlt />, title: 'Güvenilirlik', description: 'Aracınız sigortalı ve güvence altında taşınır.' },
-        { icon: <FaClock />, title: 'Hız', description: '15-20 dakika içinde yanınızdayız.' },
+        { icon: <FaShieldAlt />, title: 'Güvenilirlik', description: 'Taşıma yöntemi ve güvence kapsamı hizmet öncesinde açıkça paylaşılır.' },
+        { icon: <FaClock />, title: 'Hızlı Yönlendirme', description: 'Konum ve trafik durumuna göre en uygun ekip yönlendirilir.' },
         { icon: <FaAward />, title: 'Profesyonellik', description: 'Deneyimli ekip ve modern ekipman.' },
     ];
-
-    const faqs = [
-        {
-            question: 'Çekici ücreti nasıl belirlenir?',
-            answer: 'Ücretlendirme mesafe, araç tipi ve hizmet saatine göre belirlenir. Aradığınızda net fiyat bilgisi verilir, sürpriz ücret olmaz.'
-        },
-        {
-            question: '4x4 ve AWD araçları çekebilir misiniz?',
-            answer: 'Evet! Flatbed çekicilerimiz ve özel donanımlarımız sayesinde 4 tekerlekten çekişli araçları güvenle taşıyoruz.'
-        },
-        {
-            question: 'Kapalı otoparktan araç çekebilir misiniz?',
-            answer: 'Evet, düşük tavan yüksekliği olan otoparklar için özel ekipmanlarımız mevcuttur.'
-        },
-        {
-            question: 'Çekici ne kadar sürede gelir?',
-            answer: 'Mezitli ve Mersin bölgesinde ortalama 15-20 dakika içinde yanınızda oluyoruz.'
-        },
-        {
-            question: 'Taşıma sırasında araca zarar gelir mi?',
-            answer: 'Hayır, profesyonel sabitleme sistemlerimiz ve deneyimli ekibimiz sayesinde aracınız hasarsız taşınır. Ayrıca tüm taşımalar sigorta kapsamındadır.'
-        },
-        {
-            question: 'Hangi ödeme yöntemlerini kabul ediyorsunuz?',
-            answer: 'Nakit, kredi kartı ve banka havalesi ile ödeme yapabilirsiniz.'
-        },
-    ];
-
-    const toggleFaq = (index) => {
-        setOpenFaq(openFaq === index ? null : index);
-    };
 
     return (
         <div className="page about-page">
             {/* Hero Section */}
             <section className="page-hero">
-                <motion.div
+                <Motion.div
                     className="page-hero-content"
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
                 >
                     <h1>Hakkımızda</h1>
-                    <p>Mezitli'de 15+ yıldır güvenilir yol yardım hizmeti</p>
-                </motion.div>
+                    <p>2009'dan beri Mezitli ve Mersin'de yol yardım hizmeti</p>
+                </Motion.div>
             </section>
 
             {/* About Content */}
             <section className="about-content">
                 <div className="container">
                     <div className="about-grid">
-                        <motion.div
+                        <Motion.div
                             className="about-text"
                             initial={{ opacity: 0, x: -30 }}
                             whileInView={{ opacity: 1, x: 0 }}
@@ -89,20 +58,20 @@ const AboutPage = () => {
                             </p>
                             <p>
                                 Merkez lokasyonumuz Mezitli olmak üzere; Yenişehir, Akdeniz, Toroslar,
-                                Tarsus, Erdemli ve tüm Mersin'e hızlı müdahale sağlıyoruz.
+                                Tarsus, Erdemli, Silifke, Anamur ve Mersin geneline hizmet sağlıyoruz.
                             </p>
                             <p>
-                                Müşteri memnuniyetini ön planda tutarak, her çağrıya en kısa sürede ulaşıyor
-                                ve aracınızı güvenle istediğiniz noktaya taşıyoruz. Sigortalı taşımacılık
-                                anlayışımızla aracınız her zaman güvence altındadır.
+                                Her talepte araç tipi, konum ve yol koşullarını değerlendiriyor; uygun ekipmanı
+                                yönlendirerek aracınızı istediğiniz noktaya güvenle taşıyoruz. Taşıma sürecinde
+                                profesyonel yükleme ve sabitleme yöntemleri kullanıyoruz.
                             </p>
 
                             <div className="about-cta">
-                                <a href="tel:05426216901" className="btn-primary">
+                                <a href={SITE.phoneHref} className="btn-primary">
                                     <FaPhone /> Hemen Ara
                                 </a>
                                 <a
-                                    href="https://wa.me/905426216901"
+                                    href={SITE.whatsappUrl}
                                     className="btn-secondary"
                                     target="_blank"
                                     rel="noopener noreferrer"
@@ -110,9 +79,9 @@ const AboutPage = () => {
                                     <FaWhatsapp /> WhatsApp
                                 </a>
                             </div>
-                        </motion.div>
+                        </Motion.div>
 
-                        <motion.div
+                        <Motion.div
                             className="about-stats"
                             initial={{ opacity: 0, x: 30 }}
                             whileInView={{ opacity: 1, x: 0 }}
@@ -126,7 +95,7 @@ const AboutPage = () => {
                                     <div className="stat-card-label">{stat.label}</div>
                                 </div>
                             ))}
-                        </motion.div>
+                        </Motion.div>
                     </div>
                 </div>
             </section>
@@ -137,7 +106,7 @@ const AboutPage = () => {
                     <h2 className="section-title">Neden <span className="text-gold">Bizi Seçmelisiniz?</span></h2>
                     <div className="values-grid">
                         {values.map((value, index) => (
-                            <motion.div
+                            <Motion.div
                                 key={index}
                                 className="value-card"
                                 initial={{ opacity: 0, y: 20 }}
@@ -148,41 +117,12 @@ const AboutPage = () => {
                                 <div className="value-icon">{value.icon}</div>
                                 <h3>{value.title}</h3>
                                 <p>{value.description}</p>
-                            </motion.div>
+                            </Motion.div>
                         ))}
                     </div>
                 </div>
             </section>
 
-            {/* FAQ Section */}
-            <section className="faq-section">
-                <div className="container">
-                    <h2 className="section-title">Sık Sorulan <span className="text-gold">Sorular</span></h2>
-                    <div className="faq-list">
-                        {faqs.map((faq, index) => (
-                            <motion.div
-                                key={index}
-                                className={`faq-item ${openFaq === index ? 'open' : ''}`}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.4, delay: index * 0.05 }}
-                            >
-                                <button
-                                    className="faq-question"
-                                    onClick={() => toggleFaq(index)}
-                                >
-                                    <span>{faq.question}</span>
-                                    <FaChevronDown className="faq-icon" />
-                                </button>
-                                <div className="faq-answer">
-                                    <p>{faq.answer}</p>
-                                </div>
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
-            </section>
         </div>
     );
 };

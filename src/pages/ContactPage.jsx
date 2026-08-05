@@ -1,31 +1,33 @@
-import { useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { FaPhone, FaWhatsapp, FaMapMarkerAlt, FaClock, FaEnvelope } from 'react-icons/fa';
+import { motion as Motion } from 'framer-motion';
+import { FaPhone, FaWhatsapp, FaMapMarkerAlt, FaClock, FaDirections } from 'react-icons/fa';
+import { SITE, createWhatsappUrl } from '../data/site';
+import usePageMeta from '../hooks/usePageMeta';
 import './pages.css';
 
 const ContactPage = () => {
-    useEffect(() => {
-        document.title = 'İletişim | Mezitli Çekici - SERİ YOL YARDIM';
-        document.querySelector('meta[name="description"]')?.setAttribute('content', 'Seri Yol Yardım iletişim bilgileri. Fatih Mahallesi, 30042 Sk. No:4, Mezitli/Mersin. 7/24 bize ulaşın: 0542 621 69 01');
-    }, []);
+    usePageMeta({
+        title: 'İletişim | Mezitli Çekici - SERİ YOL YARDIM',
+        description: `SERİ YOL YARDIM iletişim ve konum bilgileri. ${SITE.address}. 7/24 destek: ${SITE.phoneDisplay}.`,
+        path: '/iletisim',
+    });
     const contactInfo = [
         {
             icon: <FaPhone />,
             title: 'Telefon',
-            lines: ['0542 621 69 01'],
-            href: 'tel:05426216901',
+            lines: [SITE.phoneDisplay],
+            href: SITE.phoneHref,
         },
         {
             icon: <FaWhatsapp />,
             title: 'WhatsApp',
-            lines: ['0542 621 69 01'],
-            href: 'https://wa.me/905426216901',
+            lines: [SITE.phoneDisplay],
+            href: createWhatsappUrl('Merhaba, yol yardım hizmeti almak istiyorum.'),
         },
         {
             icon: <FaMapMarkerAlt />,
-            title: 'Hizmet Bölgesi',
-            lines: ['Mezitli, Fatih Mah.', 'Yenişehir, Toroslar'],
-            href: null,
+            title: 'Adres',
+            lines: ['Fatih Mahallesi, Mezitli', 'Mersin'],
+            href: SITE.directionsUrl,
         },
         {
             icon: <FaClock />,
@@ -39,25 +41,26 @@ const ContactPage = () => {
         <div className="page contact-page">
             {/* Hero Section */}
             <section className="page-hero">
-                <motion.div
+                <Motion.div
                     className="page-hero-content"
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
                 >
                     <h1>İletişim</h1>
-                    <p>7/24 bize ulaşabilirsiniz</p>
-                </motion.div>
+                    <p>Mezitli ve Mersin genelinde 7/24 bize ulaşabilirsiniz</p>
+                </Motion.div>
             </section>
 
             {/* Contact Content */}
             <section className="contact-content">
                 <div className="container">
+                    <h2 className="visually-hidden">İletişim seçenekleri ve konum</h2>
                     <div className="contact-grid">
                         {/* Contact Cards */}
                         <div className="contact-cards">
                             {contactInfo.map((info, index) => (
-                                <motion.div
+                                <Motion.div
                                     key={index}
                                     className="contact-card"
                                     initial={{ opacity: 0, x: -20 }}
@@ -86,12 +89,12 @@ const ContactPage = () => {
                                             </div>
                                         </div>
                                     )}
-                                </motion.div>
+                                </Motion.div>
                             ))}
                         </div>
 
                         {/* Map */}
-                        <motion.div
+                        <Motion.div
                             className="contact-map"
                             initial={{ opacity: 0, x: 20 }}
                             whileInView={{ opacity: 1, x: 0 }}
@@ -99,7 +102,7 @@ const ContactPage = () => {
                             transition={{ duration: 0.6 }}
                         >
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3197.5!2d34.56!3d36.75!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sFatih%20Mah.%20Mezitli%2FMersin!5e0!3m2!1str!2str!4v1704000000000!5m2!1str!2str"
+                                src={SITE.mapEmbedUrl}
                                 width="100%"
                                 height="100%"
                                 style={{ border: 0, borderRadius: '20px', minHeight: '400px' }}
@@ -108,11 +111,11 @@ const ContactPage = () => {
                                 referrerPolicy="no-referrer-when-downgrade"
                                 title="Fatih Mahallesi 30042 Sk. No:4 Mezitli/Mersin Harita"
                             ></iframe>
-                        </motion.div>
+                        </Motion.div>
                     </div>
 
                     {/* CTA */}
-                    <motion.div
+                    <Motion.div
                         className="contact-cta"
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -120,19 +123,27 @@ const ContactPage = () => {
                     >
                         <h2>Acil Yardım İçin Hemen Arayın!</h2>
                         <div className="cta-buttons">
-                            <a href="tel:05426216901" className="btn-primary btn-large">
+                            <a href={SITE.phoneHref} className="btn-primary btn-large">
                                 <FaPhone /> Hemen Ara
                             </a>
                             <a
-                                href="https://wa.me/905426216901?text=Merhaba,%20yol%20yardım%20hizmeti%20almak%20istiyorum."
+                                href={createWhatsappUrl('Merhaba, yol yardım hizmeti almak istiyorum.')}
                                 className="btn-secondary btn-large"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
                                 <FaWhatsapp /> WhatsApp ile Yaz
                             </a>
+                            <a
+                                href={SITE.directionsUrl}
+                                className="btn-secondary btn-large"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <FaDirections /> Yol Tarifi
+                            </a>
                         </div>
-                    </motion.div>
+                    </Motion.div>
                 </div>
             </section>
         </div>

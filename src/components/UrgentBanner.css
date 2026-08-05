@@ -37,7 +37,7 @@
     color: var(--primary-bg);
 }
 
-.urgent-text h3 {
+.urgent-text h2 {
     font-size: 1.4rem;
     font-weight: 800;
     margin-bottom: 5px;
@@ -83,7 +83,7 @@
         font-size: 2rem;
     }
 
-    .urgent-text h3 {
+    .urgent-text h2 {
         font-size: 1.2rem;
     }
 

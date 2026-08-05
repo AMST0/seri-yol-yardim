@@ -1,8 +1,9 @@
-import { motion } from 'framer-motion';
+import { motion as Motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { FaTruckPickup, FaWrench, FaTruck, FaBolt, FaPhone } from 'react-icons/fa';
+import { FaTruckPickup, FaWrench, FaTruck, FaCar, FaPhone } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { SITE } from '../data/site';
 import './Services.css';
 
 const Services = () => {
@@ -13,22 +14,22 @@ const Services = () => {
         {
             icon: <FaTruckPickup />,
             title: 'Oto Kurtarma',
-            description: 'Kazalı veya arızalı aracınızı çizik bile olmadan kurtarıyoruz. Sigortalı ve garantili hizmet.',
+            description: 'Kazalı, arızalı veya hareket kabiliyeti azalmış araçlar için uygun ekipmanla güvenli kurtarma.',
         },
         {
             icon: <FaWrench />,
             title: 'Yerinde Yol Yardım',
-            description: 'Aküsü biten, lastiği patlayan, yakıtı biten araçlara yerinde çözüm. Çekiciye gerek yok!',
+            description: 'Akü, lastik ve yakıt gibi yerinde çözülebilecek sorunlarda önce yol yardım desteği.',
         },
         {
             icon: <FaTruck />,
             title: 'Çekici Hizmeti',
-            description: 'Binek, SUV, hafif ticari - her araç tipi için profesyonel çekici. Uzun mesafede bile uygun fiyat.',
+            description: 'Binek, SUV, motosiklet ve hafif ticari araçlar için şehir içi ve şehirler arası taşıma.',
         },
         {
-            icon: <FaBolt />,
-            title: '15 Dakika Müdahale',
-            description: 'Aramadan itibaren ortalama 15 dakikada yanınızdayız. Bölgedeki en hızlı ekip biziz.',
+            icon: <FaCar />,
+            title: 'Özel Araç Transferi',
+            description: 'Dijital kilitli, otomatik, elektrikli, 4x4 ve tekerlekleri dönmeyen araçlara özel aparatlarla taşıma.',
         },
     ];
 
@@ -57,7 +58,7 @@ const Services = () => {
     return (
         <section className="services section" id="services" ref={ref}>
             <div className="container">
-                <motion.div
+                <Motion.div
                     className="services-header"
                     initial={{ opacity: 0, y: 30 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -68,18 +69,18 @@ const Services = () => {
                     </h2>
                     <div className="separator" style={{ marginBottom: '20px' }}></div>
                     <p className="section-subtitle">
-                        15 yıllık tecrübe. 5000+ kurtarılan araç. Bölgenin en güvenilir yol yardım firması.
+                        Araç tipine ve bulunduğunuz konuma uygun çözümü belirleyip süreci açıkça paylaşıyoruz.
                     </p>
-                </motion.div>
+                </Motion.div>
 
-                <motion.div
+                <Motion.div
                     className="services-grid"
                     variants={containerVariants}
                     initial="hidden"
                     animate={isInView ? 'visible' : 'hidden'}
                 >
                     {services.map((service, index) => (
-                        <motion.article
+                        <Motion.article
                             key={index}
                             className="service-card"
                             variants={cardVariants}
@@ -87,11 +88,11 @@ const Services = () => {
                             <div className="service-icon">{service.icon}</div>
                             <h3 className="service-title">{service.title}</h3>
                             <p className="service-description">{service.description}</p>
-                        </motion.article>
+                        </Motion.article>
                     ))}
-                </motion.div>
+                </Motion.div>
 
-                <motion.div
+                <Motion.div
                     className="services-cta"
                     initial={{ opacity: 0, y: 30 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -100,11 +101,11 @@ const Services = () => {
                     <p>Tüm hizmetlerimizi inceleyin veya hemen bizi arayın.</p>
                     <div className="services-cta-buttons">
                         <Link to="/hizmetler" className="btn-secondary">Tüm Hizmetler</Link>
-                        <a href="tel:05426216901" className="btn-primary">
+                        <a href={SITE.phoneHref} className="btn-primary">
                             <FaPhone /> Şimdi Ara
                         </a>
                     </div>
-                </motion.div>
+                </Motion.div>
             </div>
         </section>
     );

@@ -85,4 +85,14 @@
     .floating-cta-btn svg {
         font-size: 1.5rem;
     }
+
+    .floating-cta:not(.is-visible) {
+        opacity: 0 !important;
+        pointer-events: none;
+        transform: translateY(30px) !important;
+    }
+
+    body.menu-open .floating-cta {
+        display: none;
+    }
 }

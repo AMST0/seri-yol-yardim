@@ -1,5 +1,6 @@
-import { motion } from 'framer-motion';
-import { FaPhone, FaWhatsapp, FaClock, FaMapMarkerAlt } from 'react-icons/fa';
+import { motion as Motion } from 'framer-motion';
+import { FaPhone, FaWhatsapp } from 'react-icons/fa';
+import { SITE, createWhatsappUrl } from '../data/site';
 import truckVideo from '../assets/truck-animation.mp4';
 import './Hero.css';
 
@@ -42,33 +43,33 @@ const Hero = () => {
     return (
         <section className="hero" id="hero">
             <div className="hero-container">
-                <motion.div
+                <Motion.div
                     className="hero-content"
                     variants={containerVariants}
                     initial="hidden"
                     animate="visible"
                 >
-                    <motion.div className="hero-badge" variants={itemVariants}>
+                    <Motion.div className="hero-badge" variants={itemVariants}>
                         <span className="hero-badge-icon"></span>
-                        Bölgenin 1 Numaralı Yol Yardım Firması
-                    </motion.div>
+                        Mezitli ve Mersin'de 7/24 Yol Yardım
+                    </Motion.div>
 
-                    <motion.h1 className="hero-title" variants={itemVariants}>
-                        Aracınız Yolda mı Kaldı? <span className="highlight">15 Dakikada</span> Yanınızdayız!
-                    </motion.h1>
+                    <Motion.h1 className="hero-title" variants={itemVariants}>
+                        Aracınız Yolda mı Kaldı? <span className="highlight">Hızla</span> Yanınızdayız
+                    </Motion.h1>
 
-                    <motion.p className="hero-subtitle" variants={itemVariants}>
-                        Mezitli ve Mersin çevresinde en hızlı, en güvenilir çekici hizmeti.
-                        <strong> Hızlıyız. Güveniliriz. 7/24 Buradayız.</strong>
-                    </motion.p>
+                    <Motion.p className="hero-subtitle" variants={itemVariants}>
+                        Mezitli merkezli ekibimizle Mersin genelinde çekici, oto kurtarma ve
+                        yerinde yol yardım hizmeti sunuyoruz. <strong>Gece gündüz, 7/24 ulaşabilirsiniz.</strong>
+                    </Motion.p>
 
-                    <motion.div className="hero-buttons" variants={itemVariants}>
-                        <a href="tel:05426216901" className="btn-primary btn-large">
+                    <Motion.div className="hero-buttons" variants={itemVariants}>
+                        <a href={SITE.phoneHref} className="btn-primary btn-large">
                             <FaPhone />
-                            Şimdi Ara - Hemen Geliyoruz
+                            Şimdi Ara
                         </a>
                         <a
-                            href="https://wa.me/905426216901?text=Merhaba,%20acil%20yol%20yardım%20istiyorum.%20Konum%20göndereceğim."
+                            href={createWhatsappUrl('Merhaba, yol yardım hizmeti almak istiyorum. Konumumu paylaşacağım.')}
                             className="btn-secondary"
                             target="_blank"
                             rel="noopener noreferrer"
@@ -76,25 +77,25 @@ const Hero = () => {
                             <FaWhatsapp />
                             WhatsApp ile Konum Gönder
                         </a>
-                    </motion.div>
+                    </Motion.div>
 
-                    <motion.div className="hero-stats" variants={itemVariants}>
+                    <Motion.div className="hero-stats" variants={itemVariants}>
                         <div className="stat-item">
-                            <span className="stat-value">15+</span>
-                            <span className="stat-label">Yıllık Tecrübe</span>
+                            <span className="stat-value">7/24</span>
+                            <span className="stat-label">Kesintisiz Hizmet</span>
                         </div>
                         <div className="stat-item">
-                            <span className="stat-value">5000+</span>
-                            <span className="stat-label">Kurtarılan Araç</span>
+                            <span className="stat-value">Mersin</span>
+                            <span className="stat-label">İl Geneli Destek</span>
                         </div>
                         <div className="stat-item">
-                            <span className="stat-value">15 dk</span>
-                            <span className="stat-label">Ortalama Varış</span>
+                            <span className="stat-value">Güvenli</span>
+                            <span className="stat-label">Uygun Ekipman</span>
                         </div>
-                    </motion.div>
-                </motion.div>
+                    </Motion.div>
+                </Motion.div>
 
-                <motion.div
+                <Motion.div
                     className="hero-visual"
                     variants={imageVariants}
                     initial="hidden"
@@ -108,12 +109,14 @@ const Hero = () => {
                                 loop
                                 muted
                                 playsInline
+                                preload="metadata"
+                                aria-hidden="true"
                             >
                                 <source src={truckVideo} type="video/mp4" />
                             </video>
                         </div>
                     </div>
-                </motion.div>
+                </Motion.div>
             </div>
         </section>
     );

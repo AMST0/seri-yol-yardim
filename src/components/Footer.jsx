@@ -1,7 +1,8 @@
-import { motion } from 'framer-motion';
+import { motion as Motion } from 'framer-motion';
 import { FaPhone, FaWhatsapp, FaMapMarkerAlt, FaChevronRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import logo from '../assets/logo.png';
+import { SITE } from '../data/site';
 import './Footer.css';
 
 const Footer = () => {
@@ -20,7 +21,7 @@ const Footer = () => {
     };
 
     return (
-        <motion.footer
+        <Motion.footer
             className="footer"
             initial="hidden"
             whileInView="visible"
@@ -31,7 +32,7 @@ const Footer = () => {
                 <div className="footer-container">
                     <div className="footer-brand">
                         <Link to="/" className="footer-logo">
-                            <img src={logo} alt="Seri Yol Yardım Logo" className="footer-logo-img" />
+                            <img src={logo} alt="SERİ YOL YARDIM" className="footer-logo-img" width="320" height="283" loading="lazy" />
                         </Link>
                         <p className="footer-slogan">
                             Mezitli ve Mersin'de 7/24 güvenilir oto kurtarma ve yol yardım hizmeti.
@@ -39,14 +40,14 @@ const Footer = () => {
                         </p>
                         <div className="footer-social">
                             <a
-                                href="tel:05426216901"
+                                href={SITE.phoneHref}
                                 className="footer-social-link"
                                 aria-label="Telefon"
                             >
                                 <FaPhone />
                             </a>
                             <a
-                                href="https://wa.me/905426216901"
+                                href={SITE.whatsappUrl}
                                 className="footer-social-link whatsapp"
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -61,28 +62,34 @@ const Footer = () => {
                         <h4>Hızlı Erişim</h4>
                         <ul className="footer-links">
                             <li>
-                                <a href="#hero">
+                                <Link to="/">
                                     <FaChevronRight size={10} />
                                     Ana Sayfa
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a href="#services">
+                                <Link to="/hakkimizda">
+                                    <FaChevronRight size={10} />
+                                    Hakkımızda
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/hizmetler">
                                     <FaChevronRight size={10} />
                                     Hizmetlerimiz
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a href="#advantages">
+                                <Link to="/sss">
                                     <FaChevronRight size={10} />
-                                    Neden Biz?
-                                </a>
+                                    S.S.S.
+                                </Link>
                             </li>
                             <li>
-                                <a href="#contact">
+                                <Link to="/iletisim">
                                     <FaChevronRight size={10} />
                                     İletişim
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </div>
@@ -106,7 +113,7 @@ const Footer = () => {
                             <div className="footer-contact-text">
                                 <span className="footer-contact-label">Telefon</span>
                                 <span className="footer-contact-value">
-                                    <a href="tel:05426216901">0542 621 69 01</a>
+                                    <a href={SITE.phoneHref}>{SITE.phoneDisplay}</a>
                                 </span>
                             </div>
                         </div>
@@ -118,11 +125,11 @@ const Footer = () => {
                                 <span className="footer-contact-label">WhatsApp</span>
                                 <span className="footer-contact-value">
                                     <a
-                                        href="https://wa.me/905426216901"
+                                        href={SITE.whatsappUrl}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
-                                        0542 621 69 01
+                                        {SITE.phoneDisplay}
                                     </a>
                                 </span>
                             </div>
@@ -134,7 +141,9 @@ const Footer = () => {
                             <div className="footer-contact-text">
                                 <span className="footer-contact-label">Adres</span>
                                 <span className="footer-contact-value">
-                                    Fatih Mah. Mezitli / Mersin
+                                    <a href={SITE.directionsUrl} target="_blank" rel="noopener noreferrer">
+                                        {SITE.shortAddress}
+                                    </a>
                                 </span>
                             </div>
                         </div>
@@ -150,7 +159,7 @@ const Footer = () => {
                     </p>
                 </div>
             </div>
-        </motion.footer>
+        </Motion.footer>
     );
 };
 
